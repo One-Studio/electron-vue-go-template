@@ -1,4 +1,4 @@
-# electron-vue-go-rpc-template
+# electron-vue-go-template
 
 ## 引言
 electron 看似很好上手，实际上有不少坑。常见的系统托盘，跨平台构建等等根据文档花一段时间测试一下即可，但是前后端交互和性能等有不少坑：
