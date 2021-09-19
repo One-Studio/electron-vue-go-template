@@ -1,18 +1,15 @@
 //隔离空间预加载js
 const { contextBridge, ipcRenderer } = require('electron')
-// const path = require('path')
-
-//设置各文件的channel通道
-// const { channel_window } = require('/src/render/ipc/window')
-// const { channel_test } = require('/src/render/ipc/test')
-// const { channel_file } = require('/src/render/ipc/file')
 
 //可用的channel通道
-const validChannels = [
-    // ...channel_window,
-    // ...channel_test,
-    // ...channel_file
-]
+const { ipc_list } = require('/src/preload/ipc_list')
+let validChannels = []
+for (let i of ipc_list) {
+    const {channel} = require("/src/renderer/ipc/" + i);
+    validChannels = [...validChannels, ...channel]
+}
+
+// const path = require('path')
 
 contextBridge.exposeInMainWorld(
     "api", {
@@ -43,5 +40,3 @@ contextBridge.exposeInMainWorld(
         // }
     }
 );
-
-alert('hello preload.js');

@@ -6,41 +6,51 @@
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <button class="btn" @click="minimize">最小化窗口</button>
+    <button class="btn" @click="maximize">最大化窗口</button>
+    <button class="btn" @click="toggleFullscreen()">切换全屏</button>
+    <button class="btn" @click="setFullscreen(true)">设置全屏</button>
+    <button class="btn" @click="setFullscreen(false)">取消全屏</button>
+    <button class="btn" @click="close">关闭</button>
   </div>
 </template>
 
 <script>
+import * as win from "/src/renderer/ipc/window";
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    close() {
+      win.close();
+    },
+    maximize() {
+      win.max();
+    },
+    minimize() {
+      win.min();
+    },
+    toggleFullscreen() {
+      win.toggleFullscreen()
+    },
+    setFullscreen(flag) {
+      win.setFullscreen(flag)
+    },
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.btn {
+  padding: 6px 10px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
 h3 {
   margin: 40px 0 0;
 }
