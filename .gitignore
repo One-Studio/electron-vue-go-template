@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-/dist
 
 # local env files
 .env.local
@@ -24,3 +23,5 @@ pnpm-debug.log*
 #Electron-builder output
 /dist_electron
 /build/
+/build/index.js
+/dist

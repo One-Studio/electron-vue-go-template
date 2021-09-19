@@ -7,7 +7,8 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 
 //引入各项配置
 import {options} from '/src/main/setup/window'
-import * as tray from '/src/main/setup/tray';
+import * as tray from '/src/main/setup/tray'
+import * as ipc from '/src/main/setup/ipc';
 //先创建托盘实例，确保退出前删除托盘
 let appTray
 
@@ -23,7 +24,8 @@ async function createWindow() {
   //系统托盘
   appTray = tray.setup(win, app)
 
-
+  //设置IPC进程间通信
+  ipc.setup(win)
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
