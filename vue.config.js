@@ -18,7 +18,7 @@ module.exports = {
                 // 项目名 这也是生成的exe文件的前缀名，指定一下程序名称，这个对于后面创建桌面快捷方式和开始菜单都有关系
                 productName: process.env.VUE_APP_TITLE,
                 // productName: "electron-vue-go-template",	// 项目名
-                copyright: 'Copyright © ${year} ${author}',	// 版权信息
+                copyright: 'Copyright © 2021 ${author}',	// 版权信息
                 compression: 'maximum',
                 asar: true,
                 directories: {
