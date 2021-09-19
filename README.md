@@ -65,7 +65,15 @@ electron 看似很好上手，实际上有不少坑。常见的系统托盘，�
 4. `vue add electron-builder` 安装electron
 
 5. 因为是如上插件的方式安装的electron，所以根目录新建 `vue.config.js`，修改主进程和渲染进程的入口文件，前端构建到build目录，之后合并打包到dist目录
-6. 
+
+6. 修改App.vue达到无边框时也有窗体阴影，加入TitleBar.vue组件代替原生标题栏
+
+7. 根据[goframe的推荐项目结构](https://goframe.org/pages/viewpage.action?pageId=1114203)于backend文件夹引入go项目
+   1. 首先下载gf命令行工具 https://github.com/gogf/gf-cli/releases
+   2. 根据项目说明安装改工具 https://github.com/gogf/gf-cli
+   3. `gf init backend`
+
+
 
 ## 使用说明
 
