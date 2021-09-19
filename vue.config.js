@@ -9,7 +9,7 @@ module.exports = {
                 // 'src/main/setup/ipc.js',
                 // 'src/main/setup/tray.js',
             ],	//调试时哪些文件改动时reload
-            preload: 'src/preload/setup.js',	// 预加载js
+            // preload: 'src/preload/setup.js',	// 预加载js
             outputDir: 'build',	// web打包输出目录
             nodeIntegration: false,
             builderOptions: {

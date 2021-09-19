@@ -1,6 +1,8 @@
 {
   "name": "electron-vue-go-template",
-  "version": "0.1.0",
+  "author": "One Studio",
+  "description": "a electron template",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
