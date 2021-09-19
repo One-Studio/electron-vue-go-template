@@ -64,7 +64,8 @@ electron 看似很好上手，实际上有不少坑。常见的系统托盘，�
 
 4. `vue add electron-builder` 安装electron
 
-5. 因为是如上插件的方式安装的electron，所以根目录新建 `vue.config.js`
+5. 因为是如上插件的方式安装的electron，所以根目录新建 `vue.config.js`，修改主进程和渲染进程的入口文件，前端构建到build目录，之后合并打包到dist目录
+6. 
 
 ## 使用说明
 

@@ -1,6 +1,6 @@
 //隔离空间预加载js
 const { contextBridge, ipcRenderer } = require('electron')
-const path = require('path')
+// const path = require('path')
 
 //设置各文件的channel通道
 // const { channel_window } = require('/src/render/ipc/window')
@@ -38,8 +38,10 @@ contextBridge.exposeInMainWorld(
                 return ipcRenderer.invoke(channel, ...args);
             }
         },
-        startDrag: (fileName) => {
-            ipcRenderer.send('ondragstart', path.join(process.cwd(), fileName))
-        }
+        // startDrag: (fileName) => {
+        //     ipcRenderer.send('ondragstart', path.join(process.cwd(), fileName))
+        // }
     }
 );
+
+alert('hello preload.js');

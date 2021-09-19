@@ -5,6 +5,12 @@ import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
+//引入各项配置
+import {options} from '/src/main/setup/window'
+import * as tray from '/src/main/setup/tray';
+//先创建托盘实例，确保退出前删除托盘
+let appTray
+
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
@@ -12,17 +18,12 @@ protocol.registerSchemesAsPrivileged([
 
 async function createWindow() {
   // Create the browser window.
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
+  const win = new BrowserWindow(options)
 
-      // Use pluginOptions.nodeIntegration, leave this alone
-      // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
-      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
-      contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION
-    }
-  })
+  //系统托盘
+  appTray = tray.setup(win, app)
+
+
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
@@ -35,11 +36,20 @@ async function createWindow() {
   }
 }
 
+//Electron单实例
+const gotTheLock = app.requestSingleInstanceLock()
+if (!gotTheLock) {
+  app.quit()
+}
+
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
+    //删除托盘
+    appTray.destroy()
+
     app.quit()
   }
 })

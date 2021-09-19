@@ -5,11 +5,11 @@ module.exports = {
             mainProcessFile: 'src/main/main.js',	// 主进程入口js
             rendererProcessFile: 'src/renderer/main.js',	// 渲染进程入口js
             mainProcessWatch: [
-                // 'src/main/setup/window.js',
+                'src/main/setup/window.js',
+                'src/main/setup/tray.js',
                 // 'src/main/setup/ipc.js',
-                // 'src/main/setup/tray.js',
             ],	//调试时哪些文件改动时reload
-            // preload: 'src/preload/setup.js',	// 预加载js
+            preload: 'src/preload/setup.js',	// 预加载js
             outputDir: 'build',	// web打包输出目录
             nodeIntegration: false,
             builderOptions: {
@@ -28,9 +28,9 @@ module.exports = {
                     oneClick: true,  //一键安装
                     allowToChangeInstallationDirectory: false,  //用户不可以修改安装位置
                     perMachine: true,  //安装在Program Files
-                    // installerIcon: "./public/app-icon/app.ico",
-                    // uninstallerIcon: "./public/app-icon/app.ico",
-                    // installerHeaderIcon: "./public/app-icon/app.ico",
+                    installerIcon: "./public/app-icon/app.ico",
+                    uninstallerIcon: "./public/app-icon/app.ico",
+                    installerHeaderIcon: "./public/app-icon/app.ico",
                     createDesktopShortcut: true,	//创建桌面快捷方式
                     createStartMenuShortcut: true,	//创建开始菜单快捷方式
                     shortcutName: "electron-vue-go"	//快捷方式名
@@ -46,8 +46,7 @@ module.exports = {
                         // { target: "portable", "arch": [ "x64"] }, //如果用户配置放在合适位置可以用单文件
                         // { target: "msi", "arch": [ "x64"] },  //和nsis自动安装没区别，文件还更大，界面更丑
                     ],
-                    // icon: "./public/app-icon/app.ico",  //自动生成的图标在放大时会有显示问题，故用installer的图标
-                    // icon: "./icon/icon-installer.ico",
+                    icon: "./public/app-icon/app.ico",  //自动生成的图标在放大时会有显示问题，故用installer的图标
                     requestedExecutionLevel: "asInvoker", //app启动权限，管理员启动时拖拽功能失效
                 },
 
