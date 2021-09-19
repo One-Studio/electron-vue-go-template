@@ -26,3 +26,14 @@
         Path   = "/tmp/log/gf-app/sql"
         Level  = "all"
         Stdout = true
+
+[gfcli]
+    [gfcli.build]
+        name     = "gf"
+        arch     = "amd64"
+        system   = "windows"
+        mod      = "none"
+        pack     = ""
+#         version  = "v0.0.1"
+        output   = "./../public/backend.exe"
+        extra    = '-ldflags=-w,-s'

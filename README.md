@@ -68,12 +68,19 @@ electron 看似很好上手，实际上有不少坑。常见的系统托盘，�
 
 6. 修改App.vue达到无边框时也有窗体阴影，加入TitleBar.vue组件代替原生标题栏
 
-7. 根据[goframe的推荐项目结构](https://goframe.org/pages/viewpage.action?pageId=1114203)于backend文件夹引入go项目
+7. 安装axios
+
+8. 根据[goframe的推荐项目结构](https://goframe.org/pages/viewpage.action?pageId=1114203)于backend文件夹引入go项目
    1. 首先下载gf命令行工具 https://github.com/gogf/gf-cli/releases
    2. 根据项目说明安装改工具 https://github.com/gogf/gf-cli
    3. `gf init backend`
 
-
+9. ```
+   cd backend
+   gf build main.go -o ./../public/backend
+   //后来发现这样没法传递 -ldflags="-w -s"，故使用
+   go build -o ./../public/backend.exe -ldflags="-w -s" main.go
+   ```
 
 ## 使用说明
 

@@ -18,11 +18,22 @@
 
 <script>
 import * as win from '@/renderer/ipc/window';
+import axios from "axios";
 
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted() {
+    axios
+      .get('http://127.0.0.1:8199/hello')
+      .then(response => {
+        alert(response.data)
+      })
+      .catch(error => {
+        alert(error)
+      })
   },
   methods: {
     close() {
