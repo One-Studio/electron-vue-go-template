@@ -99,6 +99,12 @@ yarn electron:build
 yarn go
 ```
 
+linux构建选项
+
+```
+AppImage, snap, deb, rpm, freebsd, pacman, p5p, apk, 7z, zip, tar.xz, tar.lz, tar.gz, tar.bz2, dir
+```
+
 ### 语法检查修复
 
 ```

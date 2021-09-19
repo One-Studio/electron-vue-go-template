@@ -21,7 +21,9 @@
     "maczip": "vue-cli-service electron:build --mac zip",
     "mac:arm": "vue-cli-service electron:build --arm64",
     "macdmg:arm": "vue-cli-service electron:build --mac dmg --arm64",
-    "linux": "vue-cli-service electron:build --linux deb",
+    "mac7z:arm": "vue-cli-service electron:build --mac 7z --arm64",
+    "maczip:arm": "vue-cli-service electron:build --mac zip --arm64",
+    "linux:deb": "vue-cli-service electron:build --linux deb",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },

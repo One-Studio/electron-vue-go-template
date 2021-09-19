@@ -1,11 +1,11 @@
 //隔离空间预加载js
 const { contextBridge, ipcRenderer } = require('electron')
+const { ipc_list } = require('@/preload/ipc_list')
 
-//可用的channel通道
-const { ipc_list } = require('/src/preload/ipc_list')
+//载入可用的channel通道
 let validChannels = []
 for (let i of ipc_list) {
-    const {channel} = require("/src/renderer/ipc/" + i);
+    const {channel} = require('/src/renderer/ipc/' + i);
     validChannels = [...validChannels, ...channel]
 }
 

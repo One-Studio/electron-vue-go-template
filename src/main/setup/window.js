@@ -2,19 +2,19 @@
 const path = require('path')
 const options = {
     title: "electron-vue-go",
-    width: 900,
-    height: 720,
-    minWidth: 600,
-    minHeight: 480,
+    width: 916,
+    height: 646,
+    // minWidth: 600,
+    // minHeight: 480,
     // maxWidth: 810,
     // maxHeight: 540,
-    resizable: true,
-    fullscreenable: true,
+    resizable: false,
+    fullscreenable: false,
     // trafficLightPosition: false,
 
     //无边框窗口
-    frame: true,
-    // transparent: true,
+    frame: false,
+    transparent: true,
     titleBarStyle: "customButtonsOnHover",
     backgroundColor: "#00000000",
     hasShadow: true,
