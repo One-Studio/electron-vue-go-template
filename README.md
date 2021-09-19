@@ -64,36 +64,31 @@ electron 看似很好上手，实际上有不少坑。常见的系统托盘，�
 
 4. `vue add electron-builder` 安装electron
 
+## 
 
+## 使用说明
 
-
-
-
-
-## Project setup
+安装依赖
 
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 调试
 
 ```
-yarn serve
+yarn electron:serve
 ```
 
-### Compiles and minifies for production
+### 构建
 
 ```
-yarn build
+yarn electron:build
 ```
 
-### Lints and fixes files
+### 语法检查修复
 
 ```
 yarn lint
 ```
 
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
