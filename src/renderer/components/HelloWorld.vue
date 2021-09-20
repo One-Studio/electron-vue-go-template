@@ -6,6 +6,7 @@
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
+    <button class="btn" @click="sayHello">访问后端</button>
     <button class="btn" @click="minimize">最小化窗口</button>
     <button class="btn" @click="maximize">最大化窗口/复原</button>
     <button class="btn" @click="toggleFullscreen()">切换全屏</button>
@@ -26,16 +27,19 @@ export default {
     msg: String
   },
   mounted() {
-    axios
-      .get('http://127.0.0.1:8199/hello')
-      .then(response => {
-        alert(response.data)
-      })
-      .catch(error => {
-        alert(error)
-      })
+    this.sayHello()
   },
   methods: {
+    sayHello() {
+      axios
+          .get('http://127.0.0.1:8199/hello')
+          .then(response => {
+            alert(response.data)
+          })
+          .catch(error => {
+            alert(error)
+          })
+    },
     close() {
       win.close();
     },

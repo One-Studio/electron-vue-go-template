@@ -24,6 +24,10 @@ module.exports = {
                 directories: {
                     output: "dist",	// electron打包输出目录
                 },
+                extraResources:{
+                    from: './backend/bin/backend.exe',
+                    to: './backend.exe'
+                },
                 nsis: {
                     oneClick: true,  //一键安装
                     allowToChangeInstallationDirectory: false,  //用户不可以修改安装位置

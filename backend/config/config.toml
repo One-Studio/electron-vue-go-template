@@ -35,5 +35,5 @@
         mod      = "none"
         pack     = ""
 #         version  = "v0.0.1"
-        output   = "./../public/backend.exe"
-        extra    = '-ldflags=-w,-s'
+        output   = "./bin/backend.exe"
+        extra    = '-ldflags=-w'
