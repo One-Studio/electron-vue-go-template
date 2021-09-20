@@ -77,10 +77,12 @@ electron 看似很好上手，实际上有不少坑。常见的系统托盘，�
 
 9. ```
    cd backend
-   gf build main.go -o ./../public/backend
+   gf build main.go -o ./bin/backend.exe
    //后来发现这样没法传递 -ldflags="-w -s"，故使用
-   go build -o ./../public/backend.exe -ldflags="-w -s" main.go
+   go build -o ./bin/backend.exe -ldflags="-w -s" main.go
    ```
+
+10. 在 vue.config.js 中修改打包设置，把 ./bin/backend.exe 转移到resources目录，electron启动时调用 /src/main/setup/backend.js 启动后端
 
 ## 使用说明
 
@@ -88,29 +90,28 @@ electron 看似很好上手，实际上有不少坑。常见的系统托盘，�
 
 ```
 yarn install
+cd backend
+go get
 ```
 
 ### 调试
 
 ```
+//打包后端
+go build -o ./bin/backend.exe -ldflags="-w -s" main.go
+//调试前端
 yarn electron:serve
-```
-
-或者
-
-```
+//或者
 yarn s
 ```
 
 ### 构建
 
 ```
+//打包后端
+go build -o ./bin/backend.exe -ldflags="-w -s" main.go
 yarn electron:build
-```
-
-或者
-
-```
+//或者
 yarn go
 ```
 
