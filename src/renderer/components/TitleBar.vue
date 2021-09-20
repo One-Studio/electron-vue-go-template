@@ -98,10 +98,19 @@ export default {
   -webkit-app-region: no-drag;
   -webkit-user-select: auto;
   box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
+  /*transition: width ease-in-out 300ms;*/
+  /*transition: all ease-in-out 1000ms;*/
+  /*transform: translate3d(0,0,0)*/
+  /*-webkit-transform-style: preserve-3d;*/
+  /*-webkit-backface-visibility: hidden;*/
+  /*-moz-backface-visibility: hidden;*/
+  /*-ms-backface-visibility: hidden;*/
 }
 
 .traffic-btn:hover {
-  transition-duration: 300ms;
-  transform: scale(1.1);
+  transition-duration: 200ms;
+  transform: scale(1.08);
+  /*width: 16px;*/
+  /*height: 16px;*/
 }
 </style>

@@ -56,10 +56,10 @@ body::-webkit-scrollbar {
   text-align: center;
   background: transparent;
   color: #2c3e50;
-  width: calc(100% - 16px);
-  height: calc(100% - 16px);
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
   margin: 0;
-  padding: 8px;
+  padding: 6px;
 }
 
 /* 与App区分，不然会有两个边框 */
@@ -71,6 +71,6 @@ body::-webkit-scrollbar {
   background: rgba(251, 251, 251, .985);
   border-radius: 10px;
   border: 0.5px rgba(0,0,0,0.12) outset;
-  box-shadow: 0 3px 10px rgba(0,0,0,.12);
+  box-shadow: 0 3px 10px rgba(0,0,0,.24);
 }
 </style>
