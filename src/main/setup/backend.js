@@ -1,9 +1,12 @@
 //管理后端服务的开启等
 const path = require('path')
 const filepath =
-    process.env.NODE_ENV === 'production'?
-        path.join(process.cwd(), 'resources', 'backend.exe'):
-        './backend/bin/backend.exe'
+    (process.env.NODE_ENV === 'production'?
+        path.join(process.cwd(), 'resources', 'backend'):
+        './backend/bin/backend')
+    + (process.platform === 'darwin'?
+        '':
+        '.exe')
 export {setup}
 
 function setup() {

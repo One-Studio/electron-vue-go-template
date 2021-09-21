@@ -1,20 +1,34 @@
 // electron 窗口设置
+let opt
+if (process.platform === "darwin") { //"win32"
+    opt = {
+        width: 900,
+        height: 630,
+        frame: false,
+        transparent: true,
+    }
+} else {
+    opt = {
+        width: 912,
+        height: 642,
+        frame: false,
+        transparent: true,
+    }
+}
+
+
 const path = require('path')
 const options = {
     title: "electron-vue-go",
-    width: 916,
-    height: 646,
-    // minWidth: 600,
-    // minHeight: 480,
-    // maxWidth: 810,
-    // maxHeight: 540,
-    resizable: false,
-    fullscreenable: false,
-    // trafficLightPosition: false,
+    width: opt.width,
+    height: opt.height,
+    resizable: true,
+    fullscreenable: true,
+    trafficLightPosition: false,
 
     //无边框窗口
-    frame: false,
-    transparent: true,
+    frame: opt.frame,
+    transparent: opt.transparent,
     titleBarStyle: "customButtonsOnHover",
     backgroundColor: "#00000000",
     hasShadow: true,

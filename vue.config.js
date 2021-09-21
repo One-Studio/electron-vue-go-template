@@ -8,6 +8,7 @@ module.exports = {
                 'src/main/setup/window.js',
                 'src/main/setup/tray.js',
                 'src/main/setup/ipc.js',
+                'src/main/setup/backend.js',
             ],	//调试时哪些文件改动时reload
             preload: 'src/preload/main.js',	// 预加载js
             outputDir: 'build',	// web打包输出目录

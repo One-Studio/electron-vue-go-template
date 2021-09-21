@@ -7,7 +7,7 @@ function setup(win, app) {
     //图标
     // const imgPath = path.join(process.resourcesPath, 'icon.ico')
     // console.log(imgPath)
-    let trayIcon = process.platform === "win32"? '/app-icon/app.ico' : '/app-icon/icon.png'
+    let trayIcon = process.platform === "win32"? '/app-icon/app.ico' : '/app-icon/app.png'
     let tray = new Tray(path.join(__static, trayIcon))
 
     //菜单
