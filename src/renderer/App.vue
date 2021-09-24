@@ -2,7 +2,7 @@
   <div id="application" :class="{ hasPadding: !fullBorder, hasNoPadding: fullBorder, fullScreen: fullBorder }">
     <div id="window" :class="{ hasShadow: !fullBorder, hasNoShadow: fullBorder, fullScreen: fullBorder }">
       <router-view class="" />
-      <button @click="switchBorder">切换外边框样式</button>
+<!--      <button @click="switchBorder">切换外边框样式</button>-->
     </div>
   </div>
 </template>
@@ -90,7 +90,7 @@ body::-webkit-scrollbar {
   /*width: 100%;*/
   /*height: 100%;*/
   background: transparent;
-  margin: auto;
+  margin: 0;
   padding: 0;
 }
 

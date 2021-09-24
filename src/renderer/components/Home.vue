@@ -1,6 +1,6 @@
 <template>
   <TitleBar title="electron+vue+go"/>
-  <img alt="Vue logo" src="@/renderer/assets/logo.png">
+  <img class="mt-12 mx-auto" alt="Vue logo" src="@/renderer/assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 

@@ -3,7 +3,7 @@
               enter-active-class="loading-enter-active"
               enter-from-class="loading-enter-from"
               enter-to-class="enter-to">
-    <div class="init-main hero min-h-screen bg-white rounded-2xl">
+    <div class="init-main bg-white">
       <div class="drag-bar"></div>
         <div class="mx-auto">
           <h1 class="mt-44 mb-4 text-5xl font-bold text-cyan-500">
@@ -15,7 +15,7 @@
           <div>
             加载中
           </div>
-          <button @click="this.$router.push('/home')">进入主页</button>
+          <button class="m-2 py-2 px-4 border-2 rounded-xl bg-purple-100" @click="this.$router.push('/home')">进入主页</button>
         </div>
     </div>
   </transition>
@@ -36,7 +36,9 @@ export default {
 }
 
 .init-main {
-	@apply absolute;
+	/*@apply absolute;*/
+  @apply bg-opacity-50 w-full h-full;
+  border-radius: 10px;
 	-webkit-user-select: none;
 }
 </style>
