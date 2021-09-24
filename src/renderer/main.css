@@ -1,0 +1,46 @@
+.block {
+	@apply p-4 bg-gray-50 bg-opacity-40 shadow-md rounded-lg;
+	border: 1px solid rgba(217, 217, 217, 0.4);
+	box-sizing: border-box;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.drag {
+	-webkit-app-region: drag;
+	-webkit-user-select: none;
+    user-select: none;
+}
+
+.no-select {
+	-webkit-user-select: none;
+    user-select: none;
+}
+
+.enter-active {
+	@apply transition duration-300 ease-out;
+}
+
+.enter-from {
+	@apply opacity-0 transform origin-top -translate-y-6 -translate-x-1;
+	--tw-scale-x: 1.02;
+	--tw-scale-y: 1.02;
+}
+
+.enter-to {
+	@apply opacity-100;
+}
+
+.enter-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.loading-enter-active {
+    @apply transition duration-700 ease-out;
+}
+
+.loading-enter-from {
+    @apply opacity-0 transform origin-top -translate-y-4;
+    --tw-scale-x: 0;
+    --tw-scale-y: 0;
+}

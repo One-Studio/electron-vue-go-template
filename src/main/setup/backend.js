@@ -1,6 +1,4 @@
 //管理后端服务的开启等
-import child_process from "child_process";
-
 const path = require('path')
 const filepath =
     (process.env.NODE_ENV === 'production'?
@@ -37,7 +35,4 @@ function setup() {
             console.log('获取后端端口号失败')
             console.log(err)
         });
-
-
-
 }

@@ -1,36 +1,51 @@
 <template>
   <div id="application" :class="{ hasPadding: !fullBorder, hasNoPadding: fullBorder, fullScreen: fullBorder }">
     <div id="window" :class="{ hasShadow: !fullBorder, hasNoShadow: fullBorder, fullScreen: fullBorder }">
-      <TitleBar title="electron+vue+go"/>
-      <img alt="Vue logo" src="@/renderer/assets/logo.png">
-      <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <router-view  />
       <button @click="switchBorder">切换外边框样式</button>
+      <button @click="toHome">进入主页</button>
     </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import TitleBar from "./components/TitleBar"
-
+//class="absolute" style="z-index: 30" :style="`opacity: ${mainOpacity}`"
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    TitleBar
   },
   data() {
     return {
       fullBorder: false,
       system: 'win32',
       fullScreenable: false,
+      loading: true,
+      opacity: 1,
+      mainOpacity: 1,
+      inited: true,
     }
+  },
+  mounted() {
+    // if(this.inited) {
+    //   setTimeout(()=>{
+    //     this.mainOpacity = 1
+    //   }, 950)
+    //   setTimeout(()=>{
+    //     this.opacity = 0
+    //   }, 1000)
+    //   setTimeout(()=>{
+    //     this.loading = false
+    //   }, 1700)
+    // }
   },
   methods: {
     switchBorder() {
       // this.$id.app.class = 'hasNoPadding'
       this.fullBorder = !this.fullBorder
       console.log(this.fullBorder)
+    },
+    toHome() {
+      this.$router.push('/home')
     }
   }
 }
@@ -70,14 +85,18 @@ body::-webkit-scrollbar {
   text-align: center;
   width: calc(100% - 4px);
   height: calc(100% - 4px);
+  /*width: 100%;*/
+  /*height: 100%;*/
   background: transparent;
-  margin: 0;
-  padding: 2px;
+  margin: auto;
+  padding: 0;
 }
 
 /* APP字体等 */
 #application {
   margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* 与App区分，不然会有两个边框 */
