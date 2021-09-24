@@ -1,9 +1,8 @@
 <template>
   <div id="application" :class="{ hasPadding: !fullBorder, hasNoPadding: fullBorder, fullScreen: fullBorder }">
     <div id="window" :class="{ hasShadow: !fullBorder, hasNoShadow: fullBorder, fullScreen: fullBorder }">
-      <router-view  />
+      <router-view class="" />
       <button @click="switchBorder">切换外边框样式</button>
-      <button @click="toHome">进入主页</button>
     </div>
   </div>
 </template>
@@ -13,6 +12,9 @@
 export default {
   name: 'App',
   components: {
+  },
+  computed: {
+
   },
   data() {
     return {
