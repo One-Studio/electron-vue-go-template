@@ -6,9 +6,9 @@
     <div class="title-content" style="">{{ title }}</div>
     <!--			<div class="traffic-light">-->
     <div style="position: absolute; right: 0">
-      <button @click="minimize" class="bg-green-500 traffic-btn hover:inner-shadow" style="background-color: rgb(16, 185, 129)"></button>
-      <button @click="maximize" class="bg-yellow-500 traffic-btn" style="background-color: rgb(245, 158, 11)"></button>
-      <button @click="close" class="bg-red-500 traffic-btn" style="background-color: rgb(239, 68, 68)"></button>
+      <button @click="minimize" class="bg-green-500 traffic-btn hover:inner-shadow"></button>
+      <button @click="maximize" class="bg-yellow-500 traffic-btn"></button>
+      <button @click="close" class="bg-red-500 traffic-btn"></button>
     </div>
     <!--			</div>-->
     <!--		</div>-->

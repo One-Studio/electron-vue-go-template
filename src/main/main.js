@@ -83,12 +83,16 @@ app.on('ready', async () => {
 if (isDevelopment) {
   if (process.platform === 'win32') {
     process.on('message', (data) => {
+      //删除托盘
+      appTray.destroy()
       if (data === 'graceful-exit') {
         app.quit()
       }
     })
   } else {
     process.on('SIGTERM', () => {
+      //删除托盘
+      appTray.destroy()
       app.quit()
     })
   }

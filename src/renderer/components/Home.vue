@@ -1,7 +1,9 @@
 <template>
-  <TitleBar title="electron+vue+go"/>
-  <img class="mt-12 mx-auto" alt="Vue logo" src="@/renderer/assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="w-full h-full bg-white">
+    <TitleBar title="electron+vue+go"/>
+    <img class="mt-12 mx-auto" alt="Vue logo" src="@/renderer/assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  </div>
 </template>
 
 <script>
@@ -18,5 +20,6 @@ export default {
 </script>
 
 <style scoped>
-
+root {
+}
 </style>

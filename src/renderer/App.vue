@@ -1,9 +1,7 @@
 <template>
   <div id="application" :class="{ hasPadding: !fullBorder, hasNoPadding: fullBorder, fullScreen: fullBorder }">
-    <div id="window" :class="{ hasShadow: !fullBorder, hasNoShadow: fullBorder, fullScreen: fullBorder }">
-      <router-view class="" />
-<!--      <button @click="switchBorder">切换外边框样式</button>-->
-    </div>
+    <router-view id="window" :class="{ hasShadow: !fullBorder, hasNoShadow: fullBorder, fullScreen: fullBorder }" />
+    <!--      <button @click="switchBorder">切换外边框样式</button>-->
   </div>
 </template>
 
@@ -28,17 +26,7 @@ export default {
     }
   },
   mounted() {
-    // if(this.inited) {
-    //   setTimeout(()=>{
-    //     this.mainOpacity = 1
-    //   }, 950)
-    //   setTimeout(()=>{
-    //     this.opacity = 0
-    //   }, 1000)
-    //   setTimeout(()=>{
-    //     this.loading = false
-    //   }, 1700)
-    // }
+    //App挂载后监听IPC消息，并定时向后端发送请求
   },
   methods: {
     switchBorder() {
@@ -64,10 +52,6 @@ html, body {
   padding: 0;
 }
 
-body {
-  /*padding: 10px;*/
-}
-
 /* 隐藏滚动条 */
 body::-webkit-scrollbar {
   display: none;
@@ -85,20 +69,22 @@ body::-webkit-scrollbar {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  /*width: 100%;*/
-  /*height: 100%;*/
-  background: transparent;
-  margin: 0;
-  padding: 0;
-}
-
-/* APP字体等 */
-#application {
-  margin: 0;
+  /*width: calc(100% - 4px);*/
+  /*height: calc(100% - 4px);*/
   width: 100%;
   height: 100%;
+  background: red;
+  /*background: transparent;*/
+  margin: 0;
+  padding: 0;
+  /*padding: 2px;*/
+}
+
+
+#application {
+  @apply bg-green-300;
+  /*margin: 0;*/
+  /*padding: 0;*/
 }
 
 /* 与App区分，不然会有两个边框 */
@@ -108,6 +94,7 @@ body::-webkit-scrollbar {
   margin: 0;
   padding: 0;
   background: rgba(251, 251, 251, .985);
+  /*background: transparent;*/
   border-radius: 10px;
   border: 0.5px rgba(0,0,0,0.12) outset;
 }
@@ -115,17 +102,18 @@ body::-webkit-scrollbar {
 .hasPadding {
   width: calc(100% - 12px);
   height: calc(100% - 12px);
-  padding: 6px;
+  padding: 6px 6px 6px 6px;
 }
 
 .hasNoPadding {
   width: 100%;
   height: 100%;
   padding: 0;
+  margin: 0;
 }
 
 .hasShadow {
-  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
 }
 
 .hasNoShadow {
