@@ -1,9 +1,10 @@
 <template>
-  <div id="app">
-    <div id="window">
+  <div id="application" :class="{ hasPadding: !fullBorder, hasNoPadding: fullBorder, fullScreen: fullBorder }">
+    <div id="window" :class="{ hasShadow: !fullBorder, hasNoShadow: fullBorder, fullScreen: fullBorder }">
       <TitleBar title="electron+vue+go"/>
       <img alt="Vue logo" src="@/renderer/assets/logo.png">
       <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <button @click="switchBorder">切换外边框样式</button>
     </div>
   </div>
 </template>
@@ -17,6 +18,20 @@ export default {
   components: {
     HelloWorld,
     TitleBar
+  },
+  data() {
+    return {
+      fullBorder: false,
+      system: 'win32',
+      fullScreenable: false,
+    }
+  },
+  methods: {
+    switchBorder() {
+      // this.$id.app.class = 'hasNoPadding'
+      this.fullBorder = !this.fullBorder
+      console.log(this.fullBorder)
+    }
   }
 }
 </script>
@@ -48,18 +63,21 @@ body::-webkit-scrollbar {
 /*  font-style: normal;*/
 /*}*/
 
-/* APP字体等 */
 #app {
   font-family: 'Roboto', Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
   background: transparent;
-  color: #2c3e50;
-  width: calc(100% - 12px);
-  height: calc(100% - 12px);
   margin: 0;
-  padding: 6px;
+  padding: 2px;
+}
+
+/* APP字体等 */
+#application {
+  margin: 0;
 }
 
 /* 与App区分，不然会有两个边框 */
@@ -71,6 +89,33 @@ body::-webkit-scrollbar {
   background: rgba(251, 251, 251, .985);
   border-radius: 10px;
   border: 0.5px rgba(0,0,0,0.12) outset;
-  box-shadow: 0 3px 10px rgba(0,0,0,.24);
+}
+
+.hasPadding {
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  padding: 6px;
+}
+
+.hasNoPadding {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.hasShadow {
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+
+.hasNoShadow {
+
+}
+
+.fullScreen {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
 }
 </style>

@@ -20,5 +20,4 @@ func init() {
 	    group.Middleware(MiddlewareCORS)
 		group.ALL("/hello", api.Hello)
 	})
-	s.SetPort(12580)
 }
