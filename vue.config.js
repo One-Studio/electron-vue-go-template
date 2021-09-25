@@ -1,4 +1,6 @@
 //构建、打包配置
+const suffix = process.env.platform === 'win32'? '.exe':''
+console.log(suffix)
 
 module.exports = {
     pluginOptions: {
@@ -27,8 +29,8 @@ module.exports = {
                     output: "dist",	// electron打包输出目录
                 },
                 extraResources:{
-                    from: './backend/bin/backend.exe',
-                    to: './backend.exe'
+                    from: './backend/bin/backend' + suffix,
+                    to: './backend' + suffix
                 },
                 nsis: {
                     oneClick: true,  //一键安装

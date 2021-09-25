@@ -1,6 +1,4 @@
 //管理后端服务的开启等
-import {app} from "electron";
-
 const path = require('path')
 const filepath =
     (process.env.NODE_ENV === 'production'?
