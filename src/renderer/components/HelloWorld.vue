@@ -12,11 +12,13 @@
     <p>版本号：{{version}}</p>
     <button class="bg-green-100" @click="setVersion('1.114.514')">设置版本号</button>
     <button class="bg-red-100" @click="actSetVersion('hello action!')">action设置版本号</button>
+
   </div>
 </template>
 
 <script>
 import * as win from '@/renderer/ipc/window';
+import * as test from '@/renderer/ipc/test';
 import axios from "axios";
 // import { useStore } from "vuex";
 // const store = useStore();
@@ -34,6 +36,7 @@ export default {
   },
   mounted() {
     this.sayHello()
+    test.test()
   },
   computed: {
     ...mapGetters(['version'])
