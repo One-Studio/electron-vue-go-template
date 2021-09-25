@@ -1,3 +1,38 @@
+/* 占满全部空间 */
+html, body {
+	background: transparent;
+	/*background: blue;*/
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* 隐藏滚动条 */
+body::-webkit-scrollbar {
+	display: none;
+}
+
+/*应用顶层div样式*/
+#app {
+	font-family: 'Roboto', Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: transparent;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/*@font-face {*/
+/*  font-family: 'Roboto';*/
+/*  src: url('/assets/fonts/roboto/roboto-v18-latin-regular.ttf');*/
+/*  font-weight: normal;*/
+/*  font-style: normal;*/
+/*}*/
+
 .block {
 	@apply p-4 bg-gray-50 bg-opacity-40 shadow-md rounded-lg;
 	border: 1px solid rgba(217, 217, 217, 0.4);
@@ -17,7 +52,7 @@
 }
 
 .enter-active {
-	@apply transition duration-300 ease-out;
+	@apply transition duration-300 ease-in-out;
 }
 
 .enter-from {
@@ -35,8 +70,9 @@
     transform: translateX(30px);
 }
 
+/*Loading的转场动画*/
 .loading-enter-active {
-    @apply transition duration-700 ease-out;
+    @apply transition duration-700 ease-out ;
 }
 
 .loading-enter-from {

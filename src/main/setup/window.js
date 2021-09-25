@@ -2,15 +2,15 @@
 let opt
 if (process.platform === "darwin") { //"win32"
     opt = {
-        width: 900,
-        height: 630,
+        width: 840,
+        height: 590,
         frame: false,
         transparent: true,
     }
 } else {
     opt = {
-        width: 912,
-        height: 642,
+        width: 864,
+        height: 610,
         frame: false,
         transparent: true,
     }

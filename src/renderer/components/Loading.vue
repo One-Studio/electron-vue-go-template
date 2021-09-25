@@ -2,18 +2,15 @@
   <transition appear
               enter-active-class="loading-enter-active"
               enter-from-class="loading-enter-from"
-              enter-to-class="enter-to">
+              enter-to-class="out-in">
     <div class="init-main">
       <div class="drag-bar"></div>
         <div class="mx-auto">
           <h1 class="mt-36 text-5xl font-bold text-cyan-500">
             Electron Vue Go Tailwind
           </h1>
-          <div class="mt-2">
+          <div class="m-4">
             Powered by <div class="inline text-xl">One Studio</div>
-          </div>
-          <div class="mt-4">
-            加载中
           </div>
           <button class="m-4 py-2 px-4 border-2 rounded-xl bg-gray-200" @click="this.$router.push('/home')">进入主页</button>
         </div>

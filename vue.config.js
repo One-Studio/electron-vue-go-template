@@ -1,4 +1,5 @@
 //构建、打包配置
+
 module.exports = {
     pluginOptions: {
         electronBuilder: {

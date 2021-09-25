@@ -10,7 +10,7 @@ import {options} from '/src/main/setup/window'
 import * as tray from '/src/main/setup/tray'
 import * as ipc from '/src/main/setup/ipc'
 import * as backend from '/src/main/setup/backend'
-backend.setup()
+backend.setup(app)
 //先创建托盘实例，确保退出前删除托盘
 let appTray
 
