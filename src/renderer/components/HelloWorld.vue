@@ -18,7 +18,7 @@
 
 <script>
 import * as win from '@/renderer/ipc/window';
-import * as test from '@/renderer/ipc/test';
+// import * as test from '@/renderer/ipc/test';
 import axios from "axios";
 // import { useStore } from "vuex";
 // const store = useStore();
@@ -36,7 +36,7 @@ export default {
   },
   mounted() {
     this.sayHello()
-    test.test()
+    // test.test()
   },
   computed: {
     ...mapGetters(['version'])

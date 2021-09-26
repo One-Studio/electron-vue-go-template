@@ -20,7 +20,10 @@
 
 <script>
 export default {
-	name: "Loading.vue"
+	name: "Loading.vue",
+  mounted() {
+
+  }
 }
 </script>
 

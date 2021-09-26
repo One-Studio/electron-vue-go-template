@@ -3,6 +3,6 @@ const channel = ['test']
 export {channel, test}
 
 function test() {
-    const res = window.api.sendSync('test')
-    console.log(res)
+    // const res = window.api.sendSync('test')
+    // console.log(res)
 }

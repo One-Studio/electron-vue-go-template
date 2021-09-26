@@ -9,25 +9,26 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 import * as tray from '/src/main/tray/init'
 import * as backend from '/src/main/backend/init'
 import * as window from '/src/main/window/init'
-backend.setup(app)
 //先创建托盘实例，确保退出前删除托盘
 let appTray
-
 // Scheme must be registered before the app is ready
+
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
-
 async function createWindow() {
+
   // Create the browser window.
   const win = new BrowserWindow(window.options)
-
   /////此处挂载各模块的setup方法，进行初始化和IPC监听
+
+  //后端服务器
+  backend.setup(app)
 
   //系统托盘
   appTray = tray.setup(win, app)
 
-  //设置窗口相关
+  //窗口相关
   window.setup(win)
 
   /////
