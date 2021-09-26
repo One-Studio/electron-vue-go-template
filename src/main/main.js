@@ -6,10 +6,9 @@ import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 //引入各项配置
-import {options} from '/src/main/setup/window'
-import * as tray from '/src/main/setup/tray'
-import * as ipc from '/src/main/setup/ipc'
-import * as backend from '/src/main/setup/backend'
+import * as tray from '/src/main/tray/init'
+import * as backend from '/src/main/backend/init'
+import * as window from '/src/main/window/init'
 backend.setup(app)
 //先创建托盘实例，确保退出前删除托盘
 let appTray
@@ -21,13 +20,17 @@ protocol.registerSchemesAsPrivileged([
 
 async function createWindow() {
   // Create the browser window.
-  const win = new BrowserWindow(options)
+  const win = new BrowserWindow(window.options)
+
+  /////此处挂载各模块的setup方法，进行初始化和IPC监听
 
   //系统托盘
   appTray = tray.setup(win, app)
 
-  //设置IPC进程间通信
-  ipc.setup(win)
+  //设置窗口相关
+  window.setup(win)
+
+  /////
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode

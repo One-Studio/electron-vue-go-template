@@ -82,7 +82,7 @@ electron 看似很好上手，实际上有不少坑。常见的系统托盘，�
    go build -o ./bin/backend.exe -ldflags="-w -s" main.go
    ```
 
-10. 在 vue.config.js 中修改打包设置，把 ./bin/backend.exe 转移到resources目录，electron启动时调用 /src/main/setup/backend.js 启动后端
+10. 在 vue.config.js 中修改打包设置，把 ./bin/backend.exe 转移到resources目录，electron启动时调用 /src/main/setup/init.js 启动后端
 
 ## 使用说明
 

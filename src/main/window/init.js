@@ -1,3 +1,5 @@
+export {options} from './options'
+
 //主进程窗口控制
 export function setup(win) {
     const {ipcMain} = require("electron");

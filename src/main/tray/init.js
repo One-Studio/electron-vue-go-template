@@ -53,7 +53,7 @@ function setup(win, app) {
     // 设置上下文菜单
     tray.setContextMenu(contextMenu)
 
-    tray.setToolTip('Electron Start')
+    tray.setToolTip(process.env.VUE_APP_NAME)
 
     //单击右下角小图标显示应用
     tray.on('click',function() {
