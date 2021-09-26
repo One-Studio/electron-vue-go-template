@@ -7,17 +7,8 @@ const filepath =
     + (process.platform === 'darwin'?
         '':
         '.exe')
-console.log(filepath)
 
 function setup(app) {
-    //debug路径和ipc
-    const {ipcMain} = require("electron");
-    ipcMain.on('test', (event)=>{
-            console.log('获取app路径', app.getPath('appData'))
-            event.returnValue = app.getPath('appData')
-        }
-    )
-
     const portfinder = require('portfinder');
 
     //后端默认端口号
@@ -28,6 +19,9 @@ function setup(app) {
         .then((port) => {
             console.log("后端端口号=" + port)
 
+            //监听IPC消息传递端口号
+
+            //启动后端程序
             const child_process = require('child_process');
             child_process.execFile(
                 filepath, [
@@ -43,7 +37,7 @@ function setup(app) {
                 })
         })
         .catch((err) => {
-            console.log('获取后端端口号失败')
+            console.log('后端端口号获取失败')
             console.log(err)
         });
 }
