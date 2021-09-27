@@ -19,5 +19,8 @@ func init() {
 	s.Group("/", func(group *ghttp.RouterGroup) {
 	    group.Middleware(MiddlewareCORS)
 		group.ALL("/hello", api.Hello)
+		group.Middleware(MiddlewareCORS)
+		group.ALL("/api/init", api.Init)
+
 	})
 }

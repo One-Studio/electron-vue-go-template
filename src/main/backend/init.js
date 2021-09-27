@@ -1,4 +1,5 @@
 //管理后端服务的开启等
+import {ipcMain} from "electron";
 const path = require('path')
 const filepath =
     (process.env.NODE_ENV === 'production'?
@@ -17,9 +18,13 @@ function setup(app) {
     //获取后端的端口号
     portfinder.getPortPromise()
         .then((port) => {
-            console.log("后端端口号=" + port)
+            console.log("后端端口号=", port)
 
             //监听IPC消息传递端口号
+            const {ipcMain} = require("electron");
+            ipcMain.handle('get-port', async () => {
+                return port
+            })
 
             //启动后端程序
             const child_process = require('child_process');

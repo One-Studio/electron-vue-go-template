@@ -33,6 +33,15 @@ body::-webkit-scrollbar {
 /*  font-style: normal;*/
 /*}*/
 
+.border {
+	border-radius: 10px;
+	border: 0.5px rgba(0,0,0,0.12) outset;
+}
+
+.shadow {
+	box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+
 .block {
 	@apply p-4 bg-gray-50 bg-opacity-40 shadow-md rounded-lg;
 	border: 1px solid rgba(217, 217, 217, 0.4);

@@ -10,6 +10,7 @@
     <button class="btn" @click="close">关闭</button>
     <p>为了无边框的窗口阴影，resizable和fullscreenable都关闭了，打开后功能可用</p>
     <p>版本号：{{version}}</p>
+    <p>端口号：{{backendPort}}</p>
     <button class="bg-green-100" @click="setVersion('1.114.514')">设置版本号</button>
     <button class="bg-red-100" @click="actSetVersion('hello action!')">action设置版本号</button>
 
@@ -39,7 +40,7 @@ export default {
     // test.test()
   },
   computed: {
-    ...mapGetters(['version'])
+    ...mapGetters(['version', 'backendPort'])
   },
   methods: {
     ...mapMutations({

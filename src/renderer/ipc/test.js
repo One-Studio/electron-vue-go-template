@@ -1,8 +1,8 @@
 //测试
-const channel = ['test']
-export {channel, test}
+const channel = []
+export {channel}
 
-function test() {
-    // const res = window.api.sendSync('test')
-    // console.log(res)
-}
+// function test() {
+//     // const res = window.api.sendSync('test')
+//     // console.log(res)
+// }
