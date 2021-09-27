@@ -1,7 +1,6 @@
 //构建、打包配置
-const suffix = process.env.platform === 'win32'? '.exe':''
+const suffix = process.platform === 'win32'? '.exe':''
 console.log(suffix)
-
 module.exports = {
     pluginOptions: {
         electronBuilder: {

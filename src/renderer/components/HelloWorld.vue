@@ -36,7 +36,7 @@ export default {
     }
   },
   mounted() {
-    this.sayHello()
+    // this.sayHello()
     // test.test()
   },
   computed: {
