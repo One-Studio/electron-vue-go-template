@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-transparent m-0 h-full w-full" :class="{ 'p-2.5': !fullBorder}">
+  <div class="bg-transparent m-0 h-full w-full" :class="{ 'p-2.5': !this.fullscreenable && this.fullscreen}">
 <!--    <div class="bg-blue-500 p-0 h-full w-full" >-->
       <router-view class="w-full h-full bg-white bg-opacity-100 border shadow rounded-xl" />
   </div>
@@ -14,18 +14,11 @@ export default {
 
   },
   computed: {
-    ...mapGetters(['version']),
+    ...mapGetters(['fullscreen', 'fullscreenable']),
 
   },
   data() {
     return {
-      fullBorder: false,
-      system: 'win32',
-      fullScreenable: false,
-      loading: true,
-      opacity: 1,
-      mainOpacity: 1,
-      inited: true,
     }
   },
   mounted() {

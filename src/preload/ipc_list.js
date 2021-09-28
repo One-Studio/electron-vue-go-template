@@ -2,5 +2,6 @@
 export const ipc_list = [
     'window',
     'backend',
+    'application',
     'test'
 ]

@@ -3,7 +3,10 @@
 const getters = {
     version: (status) => status.app.version,
     inited: (status) => status.app.inited,
-    backendPort: (status) => status.app.backendPort,
+    port: (status) => status.app.port,
+    system: (status) => status.app.system,
+    fullscreenable: (status) => status.app.fullscreenable,
+    fullscreen: (status) => status.app.fullscreen,
 }
 
 export default getters

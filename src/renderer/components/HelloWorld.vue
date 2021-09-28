@@ -10,17 +10,16 @@
     <button class="btn" @click="close">关闭</button>
     <p>为了无边框的窗口阴影，resizable和fullscreenable都关闭了，打开后功能可用</p>
     <p>版本号：{{version}}</p>
-    <p>端口号：{{backendPort}}</p>
+    <p>端口号：{{port}}</p>
     <button class="bg-green-100" @click="setVersion('1.114.514')">设置版本号</button>
     <button class="bg-red-100" @click="actSetVersion('hello action!')">action设置版本号</button>
-
   </div>
 </template>
 
 <script>
 import * as win from '@/renderer/ipc/window';
 // import * as test from '@/renderer/ipc/test';
-import axios from "axios";
+// import axios from "axios";
 // import { useStore } from "vuex";
 // const store = useStore();
 import { mapGetters, mapMutations, mapActions } from 'vuex';
@@ -40,7 +39,7 @@ export default {
     // test.test()
   },
   computed: {
-    ...mapGetters(['version', 'backendPort'])
+    ...mapGetters(['version', 'port'])
   },
   methods: {
     ...mapMutations({
@@ -50,14 +49,14 @@ export default {
         'actSetVersion'
     ]),
     sayHello() {
-      axios
-          .get('http://127.0.0.1:12580/hello')
-          .then(response => {
-            alert(response.data)
-          })
-          .catch(error => {
-            alert(error)
-          })
+      // axios
+      //     .get('http://127.0.0.1:12580/hello')
+      //     .then(response => {
+      //       alert(response.data.version)
+      //     })
+      //     .catch(error => {
+      //       alert(error)
+      //     })
     },
     close() {
       win.close();

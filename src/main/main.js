@@ -6,6 +6,7 @@ import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 //引入各项配置
+import * as application from '/src/main/app/init'
 import * as tray from '/src/main/tray/init'
 import * as backend from '/src/main/backend/init'
 import * as window from '/src/main/window/init'
@@ -21,6 +22,9 @@ async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow(window.options)
   /////此处挂载各模块的setup方法，进行初始化和IPC监听
+
+  //app初始化
+  application.setup(win)
 
   //后端服务器
   backend.setup(app)
